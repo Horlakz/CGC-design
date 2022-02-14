@@ -1,0 +1,14 @@
+header {
+  @extend %flex-between;
+  padding: 1.5rem 2rem 3rem 2rem;
+
+  nav ul {
+    display: flex;
+
+    li {
+      text-transform: capitalize;
+      padding: 0 1rem;
+      @extend %small-grey;
+    }
+  }
+}

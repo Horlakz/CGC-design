@@ -1,0 +1,65 @@
+// variables
+$orange-color: #d18d48;
+$bg-color: #1a1a1a;
+$small-font: 0.85rem;
+
+// fonts link
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap");
+
+// extends
+%flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+%small-grey {
+  color: #ccc;
+  font-size: $small-font;
+}
+
+// mixins
+@mixin aside-div($aside-div-color) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: $aside-div-color;
+  padding: 0.4rem;
+
+  h5 {
+    color: aside-div-bg($aside-div-color);
+    font-size: 0.8rem;
+  }
+
+  p {
+    font-weight: 900;
+  }
+}
+
+@mixin button-hover {
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    background: $orange-color;
+    height: 0;
+    z-index: -1;
+    transition: 0.4s ease-in-out;
+  }
+
+  &:hover::before {
+    height: 2.2rem;
+    color: black;
+  }
+}
+
+// functions
+@function aside-div-bg($aside-div-bg) {
+  @if ($aside-div-bg == $orange-color) {
+    @return white;
+  } @else {
+    @return $orange-color;
+  }
+}

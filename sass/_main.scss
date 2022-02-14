@@ -1,0 +1,99 @@
+main {
+  @extend %flex-between;
+  padding: 0 4rem;
+
+  section:first-child {
+    h4 {
+      color: $orange-color;
+      margin-left: 2rem;
+      font-size: $small-font;
+    }
+
+    aside {
+      background-color: white;
+      margin: 12rem 0 0 0;
+      padding: 2rem 2rem 0 2rem;
+      color: black;
+
+      & > div:not(:last-of-type) {
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1.5px solid $orange-color;
+      }
+
+      div:first-child {
+        @extend %flex-between;
+
+        h5 {
+          font-weight: 700;
+          text-transform: capitalize;
+        }
+
+        p {
+          font-weight: 900;
+          text-transform: uppercase;
+          text-decoration: underline;
+          text-decoration-color: lighten($bg-color, 50%);
+          font-size: $small-font;
+        }
+      }
+
+      div:nth-child(2) {
+        @include aside-div($orange-color);
+      }
+
+      div:nth-child(3) {
+        @include aside-div(white);
+      }
+
+      div:nth-child(4) {
+        @include aside-div(white);
+      }
+
+      div:nth-child(5) {
+        @include aside-div(white);
+      }
+    }
+  }
+
+  section:nth-child(2) {
+    margin-right: 15rem;
+    width: 25rem;
+
+    p:first-child {
+      @extend %small-grey;
+      text-transform: capitalize;
+    }
+
+    h3 {
+      font-size: 5rem;
+      text-transform: capitalize;
+      line-height: 0.9;
+      margin-bottom: 2rem;
+    }
+
+    button {
+      border: 1px solid $orange-color;
+      background: none;
+      color: white;
+      padding: 0.6rem 1rem;
+      margin-right: 0.8rem;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+
+      &:first-child{
+          @include button-hover;
+        }
+        
+        &:last-child {
+          @include button-hover;
+      }
+    }
+
+    p:last-child {
+      margin-top: 10rem;
+      width: 15rem;
+    }
+  }
+}
